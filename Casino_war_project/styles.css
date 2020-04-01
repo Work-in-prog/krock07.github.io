@@ -1,0 +1,53 @@
+/* *{
+    background-color: black;
+} */
+
+.parent{
+    display: flex;
+    /* height: 100vh; */
+    justify-content: center;
+    
+    
+}
+img{
+    flex: 1;
+    align-items: center;
+    height: 100%;
+}
+
+#modal{
+    background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+    z-index: 1;
+    overflow: auto;
+    
+
+}
+
+#modal-textbox{
+    background-color: white;
+	height: 250px;
+	width: 350px;
+    border-radius: 2px;
+    margin: 150px auto;
+    padding: 2%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    border-radius: 10%;
+
+}
+
+#age{
+    padding: 14px 18px;
+	background-color: black;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+	font-family: 'Arial';
+	cursor: pointer;
+}
