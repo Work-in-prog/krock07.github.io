@@ -51,3 +51,11 @@ img{
 	font-family: 'Arial';
 	cursor: pointer;
 }
+
+#wrapper{
+    background-color: rgba(187, 31, 31, 0.4);
+    /* height: 100%;
+    width: 100%; */
+    display: flex;
+
+}
