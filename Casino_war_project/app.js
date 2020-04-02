@@ -1,5 +1,5 @@
 // CREATE A DECK OF CARDS/////
-let suits = ['hearts','clubs', 'diamond', 'spades'];
+let suits = ['hearts','clubs', 'diams', 'spades'];
 let cardFace = ['2','3','4','5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 let cards = [];
 /*player value card goes here*/
@@ -14,8 +14,10 @@ $(() => {
     const $closeButton = $('#close');
     const $overAge = $('#age');
     const $fightBtn = $('#btnBattle')
-    const $p1 = $('#player-1 .hand');
-    const $p2 = $('#player-2 .hand');
+    const p1 = document.querySelector('#player-1 .hand');
+    // const p1 = $('#player-1, .hand');
+    // const p2 = $('#player-2, .hand');
+    const p2 = document.querySelector('#player-2 .hand')
 
 /*----- event listeners -----*/
 const eventListener = () => {
@@ -53,20 +55,19 @@ const fight = () => {
         dealCards(cards);    
     }
     war();
-    console.log('works')
 }
 
 /*----- war between player & player 1 functions -----*/ 
 const war = () => {
-    if(gameOver !== false) {
+    if(!gameOver) {
         /**grab card from players deck and put them in play */
         let cardOne = players[0].shift();
         let cardTwo = players[1].shift();
         /**store vale of players card */
         let cardBank = [cardOne, cardTwo];
-        // check HTML
-        $p1.innerHTML = showCard(cardOne, 0);
-        $p2.innerHTML = showCard(cardTwo, 0);
+        // pass the card and the position of the card in the parameter
+        p1.innerHTML = showCard(cardOne, 0);
+        p2.innerHTML = showCard(cardTwo, 0);
 
         // check winner
         // update scores
@@ -75,10 +76,14 @@ const war = () => {
 
 
 /*----- make a show card functions -----*/
-const showCard = (card,position) => {
+const showCard = (card, position) => {
     let move = position * 40;
-    console.log(card,move);
-
+    /*----- favorite part adding the card icons to the cards using the unicodes -----*/
+    let backgroundColor = (card.icon == "H" || card.icon == "D") ? "red" : "black";
+    let buildCardFace = '<div style="color: '+ backgroundColor +'">'+ card.number + ' &' + card.suit + ';</div>';
+    console.log(card, move);
+    return buildCardFace;
+    // alert(buildCardFace);
 }
 
 
