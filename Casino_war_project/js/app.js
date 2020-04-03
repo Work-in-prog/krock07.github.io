@@ -9,7 +9,6 @@ let gameOver = false;
 
 
 $(() => {
-let audio = new Audio("/audio/Shuffling Cards-SoundBible.com-1921026632.mp3")    
 
 /*----- cached element references -----*/
     const $modal = $('#modal');
@@ -21,7 +20,7 @@ let audio = new Audio("/audio/Shuffling Cards-SoundBible.com-1921026632.mp3")
     // const p1 = $('#player-1, .hand');
     // const p2 = $('#player-2, .hand');
     const score1 = document.querySelector('#player-1 .score');
-    const score2 = document.querySelector('#player-2 .score')
+    const score2 = document.querySelector('#player-2 .score');
 
 /*----- event listeners -----*/
 const eventListener = () => {
@@ -30,11 +29,12 @@ $closeButton.on('click', closeModal);
 $overAge.on('mouseover', button );
 $overAge.on('mouseout', awayB );
 $('img').on('click', () => {
-/*----- end modal listeners -----*/
-})
-$overAge.on('click', closeModal );
-$fightBtn.on('click', fight);
 
+})
+
+$overAge.on('click', closeModal );
+/*----- end modal listeners -----*/
+$fightBtn.on('click', fight);
 
 }
 

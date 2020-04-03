@@ -1,0 +1,190 @@
+/* *{
+    background-color: black;
+} */
+
+.parent{
+    display: flex;
+    /* height: 100vh; */
+    justify-content: center;
+    
+    
+}
+img{
+    flex: 1;
+    align-items: center;
+    height: 100%;
+}
+
+#modal{
+    background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+    z-index: 1;
+    overflow: auto;
+    
+
+}
+
+#modal-textbox{
+    background-color: white;
+	height: 250px;
+	width: 350px;
+    border-radius: 2px;
+    margin: 150px auto;
+    padding: 2%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
+    border-radius: 10%;
+
+}
+
+#age{
+    padding: 14px 18px;
+	background-color: black;
+	border: none;
+	outline: none;
+	border-radius: 3px;
+	color: white;
+	font-family: 'Arial';
+    cursor: pointer;
+    
+}
+
+
+/*----- board css styles -----*/
+
+#wrapper{
+    background-image: url('./img/casino-War.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.scoreboard{
+    position: relative;
+}
+
+.score{
+    font-size: 1.5em;
+}
+
+#message{
+    font-size: 1.2em;
+    color: white;
+    background-color: black;
+    padding: 1%;
+}
+
+#p1score{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 80px;
+    padding: 1%;
+    background-color: red;
+    color: black;
+    width: 125px;
+    height: 90px;
+}
+
+#p2score{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: -100px;
+    padding: 1%;
+    background-color: black;
+    color: red;
+    width: 125px;
+    height: 90px;
+}
+
+.btn{
+    position: absolute;
+    margin: 50px;
+}
+
+.parent{
+    display: flex;
+}
+.faceCard{
+    position: absolute;
+    padding: 10px;
+    height: 180px;
+    width: 120px;
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: white;
+    display: inline-block;
+    top: 30vh;
+    left: 58vw; 
+    margin-left: 758px;
+  
+}
+
+.hand{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+}
+
+
+.cardTop{
+    font-size: 2em;
+    height: 40px;
+    line-height: 0.9em;
+}
+
+.cardMiddle{
+    text-align: center;
+    font-size: 5em;
+    height: 110px;
+}
+
+.cardBottom{
+    font-size: 2em;
+    height: 30px;
+    line-height: 0.9em;
+    transform: rotate(-180deg);
+}
+
+.hearts .suit::after{content: '\2665';} 
+.spades .suit::after{content: '\2660';}
+.clubs .suit::after{content: '\2663';}
+.diams .suit::after{content: '\2666';}
+.spades, .clubs{color:black;}
+.hearts, .diams{color: red;}
+.hand {
+    position: relative;
+}
+
+.players{
+    /* float: left; */
+    width: 49%;
+    min-height: 300px;
+    /* border: 5px solid #ddd */
+
+};
+
+/* #player-1{
+    position: absolute;
+    width: 7vw;
+    top: 73vh;
+    left: 40vw;
+    z-index: 1;
+}  */
+
+/* #player-2{
+    position: absolute;
+    width: 7vw;
+    top: 30vh;
+    left: 40vw;
+    z-index: 1;
+
+}  */
+
+
+
