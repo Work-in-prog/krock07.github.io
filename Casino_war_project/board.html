@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="wrapper">
+        <div class="scoreBoard">
         <div id="start"></div>
         <div id="message"></div>
+        <div id="action">
+            <button id="btnBattle" type="button" class="btn">GO TO WAR</button>
+        </div>
+    </div>
         <div id="board">
+            <!-- <div class="parent">
+                <div class="child">
+                    <img class="casinoBoard" src="/img/Black-Jack-Table-Pack.jpg" alt="Casino WAR Table">
+                </div> -->
             <div id="player-1" class="players">
-                <div class="score"></div>
+                <div id="p1score" class="score"></div>
                 <div class="hand"></div>
             </div>
             <div id="player-2" class="players">
-                <div class="score"></div>
+                <div id="p2score" class="score"></div>
                 <div class="hand"></div>
-            </div>
-            <div id="action">
-                <button id="btnBattle" type="button" class="btn">GO TO WAR</button>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@ let suits = ['hearts','clubs', 'diams', 'spades'];
 let cardFace = ['2','3','4','5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 let cards = [];
 /*player value card goes here*/
-let players = [[],[]]
+let players = [[],[]];
 let gameStarts = true;
 let gameOver = false;
 
@@ -15,9 +15,11 @@ $(() => {
     const $overAge = $('#age');
     const $fightBtn = $('#btnBattle')
     const p1 = document.querySelector('#player-1 .hand');
+    const p2 = document.querySelector('#player-2 .hand')
     // const p1 = $('#player-1, .hand');
     // const p2 = $('#player-2, .hand');
-    const p2 = document.querySelector('#player-2 .hand')
+    const score1 = document.querySelector('#player-1 .score');
+    const score2 = document.querySelector('#player-2 .score')
 
 /*----- event listeners -----*/
 const eventListener = () => {
@@ -68,19 +70,70 @@ const war = () => {
         // pass the card and the position of the card in the parameter
         p1.innerHTML = showCard(cardOne, 0);
         p2.innerHTML = showCard(cardTwo, 0);
-
-        // check winner
+         // check winner
+        checkWinner(cardOne, cardTwo, cardBank);
         // update scores
-    }
-}
+        score1.innerHTML = 'PLAYER 1' + '<br>' + players[0].length ;
+        score2.innerHTML = 'PLAYER 2' + '<br>' + players[1].length ;
+        
 
+    }
+    console.log(score1,score2)
+}
+/*----- make a check winner functions -----*/
+
+const checkWinner = (cardOne, cardTwo, cardBank) => {
+    console.log(cardOne, cardTwo);
+        if(cardOne.cardValue > cardTwo.cardValue) {
+            console.log('hand 1 wins');
+            /*----- learned about the concat method it combines arrays and adds them together -----*/
+            players[0] = players[0].concat(cardBank)
+        } else if(cardTwo.cardValue > cardOne.cardValue) {
+            console.log('hand 2 wins');
+            players[1] = players[1].concat(cardBank)
+            /**check for tie */
+        } else{
+            iDeclareWar(cardBank)
+            console.log('tie');
+            /**I declare WAR */
+
+        }
+        console.log(players);
+    }
+
+/*----- make a tie game functions -----*/ 
+
+const iDeclareWar = (cardBank) => {
+    let cardOne, cardTwo;
+    /**stack cards on top of each other and then flip */
+    let pos = (cardBank.length/2);
+    if(players[0].length < 4 || players[1] < 4) {
+        return;
+    } else{
+        for(let i = 0; i < 4; i++) {
+            card1 = players[0].shift();
+            cardBank = cardBank.concat(card1);
+            p1.innerHTML += showCard(cardOne,(pos+i));
+        } 
+        for(let i = 0; i < 4; i++) {
+        card2 = players[1].shift();
+        cardBank = cardBank.concat(card2);
+        p2.innerHTML += showCard(cardTwo,(pos+i));
+    } 
+    checkWinner(cardOne, cardTwo, cardBank);
+    }
+
+}
 
 /*----- make a show card functions -----*/
 const showCard = (card, position) => {
     let move = position * 40;
     /*----- favorite part adding the card icons to the cards using the unicodes -----*/
-    let backgroundColor = (card.icon == "H" || card.icon == "D") ? "red" : "black";
-    let buildCardFace = '<div style="color: '+ backgroundColor +'">'+ card.number + ' &' + card.suit + ';</div>';
+    // let backgroundColor = (card.icon == "H" || card.icon == "D") ? "red" : "black";
+    let buildCardFace = '<div class="faceCard '+card.suit+' " style="center: ' + move +'px">';
+    buildCardFace += '<div class= "cardTop suit">' + card.number + '<br></div>';
+    buildCardFace += '<div class= "cardMiddle suit"></div> ';
+    buildCardFace += '<div class= "cardBottom suit">' + card.number + '<br></div></div> ';
     console.log(card, move);
     return buildCardFace;
     // alert(buildCardFace);
@@ -138,7 +191,7 @@ const shuffle = (arr) => {
       arr[x] = random;
       random = holdArrayItem;   
     }
-    // console.log(arr)
+    console.log(arr)
     return arr;
 }
 // shuffle(cards)

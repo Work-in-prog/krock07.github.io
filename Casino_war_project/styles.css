@@ -52,10 +52,125 @@ img{
 	cursor: pointer;
 }
 
-#wrapper{
-    background-color: rgba(187, 31, 31, 0.4);
-    /* height: 100%;
-    width: 100%; */
-    display: flex;
 
+/*----- board css styles -----*/
+
+#wrapper{
+    background-image: url('/img/Black-Jack-Table-Pack.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    /* background-position: center; */
 }
+
+.scoreboard{
+    position: relative;
+}
+
+.score{
+    font-size: 1.5em;
+}
+#p1score{
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 80px;
+    padding: 1%;
+    background-color: red;
+    color: black;
+}
+
+#p2score{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: -220px;
+    padding: 1%;
+    background-color: black;
+    color: red;
+}
+
+button{
+    position: absolute;
+    margin: 50px;
+}
+
+.parent{
+    display: flex;
+}
+.faceCard{
+    position: absolute;
+    padding: 10px;
+    height: 150px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: white;
+    /* display: table-column; */
+    top: 25vh;
+    left: 58vw; 
+  
+}
+
+.hand{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* height: 100px; */
+}
+
+
+.cardTop{
+    font-size: 2em;
+    height: 40px;
+    line-height: 0.9em;
+}
+
+.cardMiddle{
+    text-align: center;
+    font-size: 5em;
+    height: 110px;
+}
+
+.cardBottom{
+    font-size: 2em;
+    height: 10px;
+    line-height: 0.9em;
+    transform: rotate(-180deg);
+}
+
+.hearts .suit::after{content: '\2665';} 
+.spades .suit::after{content: '\2660';}
+.clubs .suit::after{content: '\2663';}
+.diams .suit::after{content: '\2666';}
+.spades, .clubs{color:black;}
+.hearts, .diams{color: red;}
+.hand {
+    position: relative;
+}
+
+.players{
+    /* float: left; */
+    width: 49%;
+    min-height: 300px;
+    /* border: 5px solid #ddd */
+
+};
+
+/* #player-1{
+    position: absolute;
+    width: 7vw;
+    top: 73vh;
+    left: 40vw;
+    z-index: 1;
+}  */
+
+/* #player-2{
+    position: absolute;
+    width: 7vw;
+    top: 30vh;
+    left: 40vw;
+    z-index: 1;
+
+}  */
+
+
+
