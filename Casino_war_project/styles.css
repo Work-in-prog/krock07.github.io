@@ -49,14 +49,15 @@ img{
 	border-radius: 3px;
 	color: white;
 	font-family: 'Arial';
-	cursor: pointer;
+    cursor: pointer;
+    
 }
 
 
 /*----- board css styles -----*/
 
 #wrapper{
-    background-image: url('/img/Black-Jack-Table-Pack.jpg');
+    background-image: url('/img/casino-War.jpg');
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -70,6 +71,14 @@ img{
 .score{
     font-size: 1.5em;
 }
+
+#message{
+    font-size: 1.2em;
+    color: white;
+    background-color: black;
+    padding: 1%;
+}
+
 #p1score{
     position: absolute;
     margin-left: 50px;
@@ -77,18 +86,22 @@ img{
     padding: 1%;
     background-color: red;
     color: black;
+    width: 125px;
+    height: 90px;
 }
 
 #p2score{
     position: absolute;
-    margin-left: 170px;
-    margin-top: -220px;
+    margin-left: 50px;
+    margin-top: -100px;
     padding: 1%;
     background-color: black;
     color: red;
+    width: 125px;
+    height: 90px;
 }
 
-button{
+.btn{
     position: absolute;
     margin: 50px;
 }
@@ -99,14 +112,15 @@ button{
 .faceCard{
     position: absolute;
     padding: 10px;
-    height: 150px;
-    width: 100px;
+    height: 180px;
+    width: 120px;
     border: 1px solid black;
     border-radius: 5%;
     background-color: white;
-    /* display: table-column; */
-    top: 25vh;
+    display: inline-block;
+    top: 30vh;
     left: 58vw; 
+    margin-left: 758px;
   
 }
 
@@ -132,7 +146,7 @@ button{
 
 .cardBottom{
     font-size: 2em;
-    height: 10px;
+    height: 30px;
     line-height: 0.9em;
     transform: rotate(-180deg);
 }
