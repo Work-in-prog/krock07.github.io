@@ -9,6 +9,8 @@ let gameOver = false;
 
 
 $(() => {
+let audio = new Audio("/audio/Shuffling Cards-SoundBible.com-1921026632.mp3")    
+
 /*----- cached element references -----*/
     const $modal = $('#modal');
     const $closeButton = $('#close');
@@ -32,6 +34,7 @@ $('img').on('click', () => {
 })
 $overAge.on('click', closeModal );
 $fightBtn.on('click', fight);
+
 
 }
 
