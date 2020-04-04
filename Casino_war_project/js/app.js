@@ -17,8 +17,6 @@ $(() => {
     const $fightBtn = $('#btnBattle')
     const p1 = document.querySelector('#player-1 .hand');
     const p2 = document.querySelector('#player-2 .hand')
-    // const p1 = $('#player-1, .hand');
-    // const p2 = $('#player-2, .hand');
     const score1 = document.querySelector('#player-1 .score');
     const score2 = document.querySelector('#player-2 .score');
 
@@ -86,7 +84,7 @@ const war = () => {
     } else {
         output('Game over');
     }
-    console.log(score1,score2)
+    // console.log(score1,score2)
 }
 
 /*----- make a output message function -----*/
@@ -97,8 +95,8 @@ const output = (message) => {
 
 const checkWinner = (cardOne, cardTwo, cardBank) => {
     if((players[0].length <= 4) || (players[1].length <= 4)) {
-       gameOver = true;
-       return;
+    gameOver = true;
+    return;
     }
     console.log(cardOne, cardTwo);
         if(cardOne.cardValue > cardTwo.cardValue) {
@@ -111,10 +109,10 @@ const checkWinner = (cardOne, cardTwo, cardBank) => {
             /**check for tie */
         } else{
             iDeclareWar(cardBank);
-           output('I Declare WAR');
+            output('I Declare WAR');
             /**I declare WAR */
         }
-        console.log(players);
+        // console.log(players);
     }
 
 /*----- make a tie game functions -----*/ 
@@ -145,15 +143,12 @@ const iDeclareWar = (cardBank) => {
 /*----- make a show card functions -----*/
 const showCard = (card, position) => {
     let move = position * 40;
-    /*----- favorite part adding the card icons to the cards using the unicodes -----*/
-    // let backgroundColor = (card.icon == "H" || card.icon == "D") ? "red" : "black";
     let buildCardFace = '<div class="faceCard '+card.suit+' " style="left: ' + move +'px">';
     buildCardFace += '<div class= "cardTop suit">' + card.number + '<br></div>';
     buildCardFace += '<div class= "cardMiddle suit"></div> ';
     buildCardFace += '<div class= "cardBottom suit">' + card.number + '<br></div></div> ';
     console.log(card, move);
     return buildCardFace;
-    // alert(buildCardFace);
 }
 
 
@@ -177,7 +172,7 @@ const makeCards = () => {
             cards.push(card)
         }   
     }
-    console.log(cards)
+    // console.log(cards)
 }
 
 /*----- Deal deck of cards function -----*/ 
@@ -192,48 +187,28 @@ const dealCards = (arr) => {
             players[1].push(arr[i])
         }
     }
-    console.log(players)
+    // console.log(players)
 }
 
 
 
 /*----- shuffle deck of cards function -----*/ 
 const shuffle = (arr) => {
-    // console.table(ary)
     for(let i = arr.length -1; i > 0; i--) {
         /*rearrange the deck array and pass it back into the array object*/
       let random = arr[Math.floor(Math.random() * arr.length)];
-      /* create variable to hold the item*/
-      let holdArrayItem = arr[i];
-      arr[i] = random;
-      random = holdArrayItem;   
+    /* create variable to hold the item*/
+    let holdArrayItem = arr[i];
+    arr[i] = random;
+    random = holdArrayItem;   
     }
     console.log(arr)
     return arr;
 }
-// shuffle(cards)
-// };
-
-
-// console.log(arr[x]);
-// console.log(holdArrayItem);
-
 /*----- Invocations -----*/ 
 eventListener()
 
-
-
-
-
 })
 
-// window.location.assign
-// history.push state
 
-
-/*----- constants -----*/
-/*----- app's state (variables) -----*/
-/*----- cached element references -----*/
-/*----- event listeners -----*/
-/*----- functions -----*/
 
