@@ -26,7 +26,7 @@ For this game I wanted to start with the aesthetics first because I figured it w
 Positioning my cards, buttons and other elements of my board took a lot of trial and error. I was able to figure it out thanks to help from my instructors(Nando,Bruno). Another challenge was actually getting three cards to show once WAR was declared. For some reason once WAR was declared I only saw one card printed. I figured out that when I built the function to show the cards I gave it a position of center and I wanted to move the WAR cards 40px. Turns out you can't move something 40px center so I switched the position to left and BOOM, I finally could see the cards. That caused my cards to shift to the left of the page which caused another problem. I needed to find a way to get my cards back aligned in the center of my board. I simply gave my cards enough margin to move right back into place.
 
 ## Screen Shots
-
+![](20652-%5BConverted%5D.jpg)
 
 ## Game Link
 [Casino War](krock07.github.io/Casino_war_project/)
