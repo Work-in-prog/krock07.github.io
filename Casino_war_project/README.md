@@ -27,7 +27,7 @@ Positioning my cards, buttons and other elements of my board took a lot of trial
 
 ## Screen Shots
 
-![](20652-%5B[Converted]%5B.jpg)
+![](https://raw.githubusercontent.com/krock07/krock07.github.io/master/Casino_war_project/img/20652-%5BConverted%5D.jpg)
 
 ## Game Link
 [Casino War](krock07.github.io/Casino_war_project/)
