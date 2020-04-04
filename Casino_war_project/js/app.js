@@ -137,6 +137,7 @@ const iDeclareWar = (cardBank) => {
         p2.innerHTML += showCard(cardTwo,(pos+i));
     } 
     checkWinner(cardOne, cardTwo, cardBank);
+    
     }
 
 }
@@ -199,12 +200,12 @@ const dealCards = (arr) => {
 /*----- shuffle deck of cards function -----*/ 
 const shuffle = (arr) => {
     // console.table(ary)
-    for(let x = arr.length -1; x > 0; x--) {
+    for(let i = arr.length -1; i > 0; i--) {
         /*rearrange the deck array and pass it back into the array object*/
       let random = arr[Math.floor(Math.random() * arr.length)];
       /* create variable to hold the item*/
-      let holdArrayItem = arr[x];
-      arr[x] = random;
+      let holdArrayItem = arr[i];
+      arr[i] = random;
       random = holdArrayItem;   
     }
     console.log(arr)
