@@ -147,7 +147,7 @@ const showCard = (card, position) => {
     buildCardFace += '<div class= "cardTop suit">' + card.number + '<br></div>';
     buildCardFace += '<div class= "cardMiddle suit"></div> ';
     buildCardFace += '<div class= "cardBottom suit">' + card.number + '<br></div></div> ';
-    console.log(card, move);
+    // console.log(card, move);
     return buildCardFace;
 }
 
